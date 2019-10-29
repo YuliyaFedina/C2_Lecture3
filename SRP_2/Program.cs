@@ -10,7 +10,7 @@ namespace SRP_2
         {
             var user = new User { Id = 1, Name = "Name" };
 
-            var phone = new Phone { Id = 1, PhoneCode = "123", Value = "123124" };
+            var phone = new Phone { Id = 1, PhoneCode = "123", Value = "1231245" };
 
             var userRepository = GetRepository<User>();
             userRepository.Add(user);
