@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
+using SRP_1.Infrastructure;
 using SRP_1.Model;
 
 namespace SRP_1.Data
@@ -9,7 +9,7 @@ namespace SRP_1.Data
     internal class EntityRepository<TEntity> : IRepository<TEntity> where TEntity : IEntity
     {
         private readonly List<TEntity> _storage = new List<TEntity>();
-
+        private readonly FileLogger _logger = new FileLogger();
         public void Add(TEntity contact)
         {
             try
@@ -18,7 +18,7 @@ namespace SRP_1.Data
             }
             catch (Exception e)
             {
-                File.AppendAllText("log.txt", e.Message);
+                _logger.Log(e);
             }
         }
 
@@ -30,7 +30,7 @@ namespace SRP_1.Data
             }
             catch (Exception e)
             {
-                File.AppendAllText("log.txt", e.Message);
+                _logger.Log(e);
             }
         }
 

@@ -41,8 +41,9 @@
     <Compile Include="Model\Contact.cs" />
     <Compile Include="Model\Email.cs" />
     <Compile Include="Model\IEntity.cs" />
-    <Compile Include="Model\Order.cs" />
-    <Compile Include="Model\OrderType.cs" />
+    <Compile Include="Model\Order\DiscountOrder.cs" />
+    <Compile Include="Model\Order\OrderBase.cs" />
+    <Compile Include="Model\Order\UrgentOrder.cs" />
     <Compile Include="Model\Phone.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />

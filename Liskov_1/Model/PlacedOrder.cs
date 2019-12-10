@@ -1,6 +1,6 @@
-﻿namespace OpenClosed_1.Data.Model
+﻿namespace Liskov_1.Model
 {
-    public class Order : IEntity
+    public abstract class PlacedOrder : IPlacedOrder
     {
         public long Id { get; set; }
 
@@ -12,6 +12,6 @@
 
         public long UserId { get; set; }
 
-        public OrderType Type { get; set; }
+        public abstract decimal GetSum();
     }
 }

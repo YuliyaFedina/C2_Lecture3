@@ -42,8 +42,12 @@
     <Compile Include="Model\DiscountOrder.cs" />
     <Compile Include="Model\Email.cs" />
     <Compile Include="Model\IEntity.cs" />
+    <Compile Include="Model\ITemplateOrder.cs" />
+    <Compile Include="Model\IPlacedOrder.cs" />
+    <Compile Include="Model\IPreOrder.cs" />
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\Phone.cs" />
+    <Compile Include="Model\PlacedOrder.cs" />
     <Compile Include="Model\PreOrder.cs" />
     <Compile Include="Model\UrgentOrder.cs" />
     <Compile Include="Model\User.cs" />

@@ -44,6 +44,8 @@
   <ItemGroup>
     <Compile Include="Data\EntityRepository.cs" />
     <Compile Include="Data\IRepository.cs" />
+    <Compile Include="Infrastructure\FileLogger.cs" />
+    <Compile Include="Infrastructure\ILogger.cs" />
     <Compile Include="Model\Contact.cs" />
     <Compile Include="Model\Email.cs" />
     <Compile Include="Model\IEntity.cs" />

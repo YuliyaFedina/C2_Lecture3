@@ -8,14 +8,14 @@ namespace Liskov_1.Model
         public long Id { get; set; }
         public string Name { get; set; }
 
-        private readonly ICollection<Order> _orders;
+        private readonly ICollection<PlacedOrder> _orders;
 
         public User()
         {
-            _orders = new HashSet<Order>();
+            _orders = new HashSet<PlacedOrder>();
         }
 
-        public void AddOrder(Order order)
+        public void AddOrder(PlacedOrder order)
         {
             _orders.Add(order);
         }

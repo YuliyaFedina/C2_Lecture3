@@ -9,7 +9,13 @@ namespace DependencyInversion_1.Data
     internal class EntityRepository<TEntity> : IRepository<TEntity> where TEntity : IEntity
     {
         private readonly List<TEntity> _storage = new List<TEntity>();
-        private readonly FileLogger _logger = new FileLogger();
+        private readonly ILogger _logger;
+
+        public EntityRepository(ILogger logger)
+        {
+            _logger = logger;
+        }
+
         public void Add(TEntity contact)
         {
             try

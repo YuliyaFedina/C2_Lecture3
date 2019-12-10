@@ -1,6 +1,8 @@
 ﻿using System;
 using HomeWork.Data;
+using HomeWork.Infrastructure;
 using HomeWork.Model;
+using HomeWork.Model.Contact2;
 using HomeWork.Validation;
 
 namespace HomeWork
@@ -11,20 +13,21 @@ namespace HomeWork
         {
             var user = new User { Id = 1, Name = "Name" };
 
-            var phone = new Contact { Type = ContactType.Phone, Id = 1, PhoneCode = "123", Value = "123124" };
-            var email = new Contact { Type = ContactType.Email, Id = 2, Value = "mail@2gis.ru" };
+            var phone = new PhoneContact {Id = 1, PhoneCode = "123", Value = "123124" };
+            var email = new EmailContact {Id = 2, Value = "mail@2gis.ru" };
 
-            var validator = new ContactValidator();
+            var emailContactValidator = new EmailContactValidator();
+            var phoneContactValidator = new PhoneContactValidator();
 
             var userRepository = GetRepository<User>();
             userRepository.Add(user);
 
-            var contactRepository = GetRepository<Contact>();
+            var contactRepository = GetRepository<ContactBase>();
 
-            if (validator.IsValid(email))
+            if (emailContactValidator.IsValid(email))
                 contactRepository.Add(phone);
 
-            if (validator.IsValid(phone))
+            if (phoneContactValidator.IsValid(phone))
                 contactRepository.Add(email);
 
             Console.WriteLine(contactRepository.GetById(1));
@@ -35,7 +38,7 @@ namespace HomeWork
 
         private static IRepository<TEntity> GetRepository<TEntity>() where TEntity : class, IEntity
         {
-            return new EntityRepository<TEntity>();
+            return new EntityRepository<TEntity>(new ExceptionHandler());
         }
     }
 }

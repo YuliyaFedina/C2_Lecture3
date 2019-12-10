@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace Liskov_1.Model
+﻿namespace OpenClosed_1.Data.Model.Order
 {
-    public class PreOrder : IPreOrder
+    public class OrderBase : IEntity
     {
         public long Id { get; set; }
 
@@ -14,7 +12,9 @@ namespace Liskov_1.Model
 
         public long UserId { get; set; }
 
-        public string Description { get; set; }
-
+        public virtual decimal GetSum()
+        {
+            return Price * Quantity;
+        }
     }
 }
