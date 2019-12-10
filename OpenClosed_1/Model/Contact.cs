@@ -8,7 +8,7 @@
         public int OrderNumber { get; set; }
         public override string ToString()
         {
-            return string.Format("Id={0}, Value={1}", Id, Value);
+            return $"Id={Id}, Value={Value}";
         }
 
         public long UserId { get; set; }

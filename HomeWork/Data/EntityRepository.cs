@@ -9,7 +9,13 @@ namespace HomeWork.Data
     internal class EntityRepository<TEntity> : IRepository<TEntity> where TEntity : class, IEntity
     {
         private readonly List<TEntity> _storage = new List<TEntity>();
-        private readonly ExceptionHandler _exceptionHandler = new ExceptionHandler();
+        private readonly IHandler _exceptionHandler;
+
+        public EntityRepository(IHandler handler)
+        {
+            _exceptionHandler = handler;
+        }
+
         public void Add(TEntity contact)
         {
             try

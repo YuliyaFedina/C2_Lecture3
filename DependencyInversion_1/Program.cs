@@ -1,5 +1,6 @@
 ﻿using System;
 using DependencyInversion_1.Data;
+using DependencyInversion_1.Infrastructure;
 using DependencyInversion_1.Model;
 
 namespace DependencyInversion_1
@@ -24,7 +25,7 @@ namespace DependencyInversion_1
 
         private static IRepository<TEntity> GetRepository<TEntity>() where TEntity : IEntity
         {
-            return new EntityRepository<TEntity>();
+            return new EntityRepository<TEntity>(new FileLogger());
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace DependencyInversion_1.Infrastructure
+namespace HomeWork.Infrastructure
 {
     internal class FileLogger : ILogger
     {

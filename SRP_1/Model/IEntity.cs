@@ -1,6 +1,6 @@
 ﻿namespace SRP_1.Model
 {
-    internal interface IEntity
+    public interface IEntity
     {
         long Id { get; }
     }

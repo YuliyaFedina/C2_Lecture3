@@ -1,6 +1,6 @@
 ﻿namespace Liskov_1.Model
 {
-    public class DiscountOrder : Order
+    public class DiscountOrder : PlacedOrder
     {
         public override decimal GetSum()
         {
