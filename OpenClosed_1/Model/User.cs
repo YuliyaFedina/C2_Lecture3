@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using OpenClosed_1.Data.Services;
 
 namespace OpenClosed_1.Data.Model
 {
@@ -19,23 +20,12 @@ namespace OpenClosed_1.Data.Model
             _orders.Add(order);
         }
 
-        public decimal GetTotalSum()
+        public decimal GetTotalSum(IOrderCalculator calculator)
         {
             decimal sum = 0;
             foreach (var order in _orders)
             {
-                switch (order.Type)
-                {
-                    case OrderType.Normal:
-                        sum += order.Price * order.Quantity;
-                        break;
-                    case OrderType.Discount:
-                        sum += (order.Price * order.Quantity) * (decimal)0.9;
-                        break;
-                    case OrderType.Urgent:
-                        sum += (order.Price * order.Quantity) * (decimal)1.2;
-                        break;
-                }
+                sum += calculator.CalculateSum(order);
             }
             return sum;
         }
