@@ -1,6 +1,6 @@
 ﻿namespace Liskov_1.Model
 {
-    public class UrgentOrder : Order
+    public class UrgentOrder : PlaсedOrder
     {
         public override decimal GetSum()
         {
