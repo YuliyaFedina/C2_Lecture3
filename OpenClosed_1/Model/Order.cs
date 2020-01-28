@@ -1,6 +1,8 @@
-﻿namespace OpenClosed_1.Data.Model
+﻿using OpenClosed_1.Data.Services;
+
+namespace OpenClosed_1.Data.Model
 {
-    public class Order : IEntity
+    public class Order : IEntity, IOrder
     {
         public long Id { get; set; }
 

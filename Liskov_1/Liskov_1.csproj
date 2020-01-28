@@ -44,6 +44,7 @@
     <Compile Include="Model\IEntity.cs" />
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\Phone.cs" />
+    <Compile Include="Model\PlaсedOrder.cs" />
     <Compile Include="Model\PreOrder.cs" />
     <Compile Include="Model\UrgentOrder.cs" />
     <Compile Include="Model\User.cs" />

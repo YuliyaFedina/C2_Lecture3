@@ -22,7 +22,7 @@ namespace Liskov_1.Model
 
         public decimal GetTotalSum()
         {
-            return _orders.Sum(order => order.GetSum());
+            return _orders.OfType<PlaсedOrder>().Sum(order => order.GetSum());
         }
     }
 }
