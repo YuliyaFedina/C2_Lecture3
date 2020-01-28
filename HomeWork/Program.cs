@@ -11,8 +11,8 @@ namespace HomeWork
         {
             var user = new User { Id = 1, Name = "Name" };
 
-            var phone = new Contact { Type = ContactType.Phone, Id = 1, PhoneCode = "123", Value = "123124" };
-            var email = new Contact { Type = ContactType.Email, Id = 2, Value = "mail@2gis.ru" };
+            var phone = new PhoneContact { Id = 1, PhoneCode = "123", Value = "123124" };
+            var email = new EmailContact { Id = 2, Value = "mail@2gis.ru" };
 
             var validator = new ContactValidator();
 

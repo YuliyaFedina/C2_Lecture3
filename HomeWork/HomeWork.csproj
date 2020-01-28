@@ -46,8 +46,9 @@
     <Compile Include="Data\IRepository.cs" />
     <Compile Include="Infrastructure\ExceptionHandler.cs" />
     <Compile Include="Model\Contact.cs" />
-    <Compile Include="Model\ContactType.cs" />
+    <Compile Include="Model\EmailContact.cs" />
     <Compile Include="Model\IEntity.cs" />
+    <Compile Include="Model\PhoneContact.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
